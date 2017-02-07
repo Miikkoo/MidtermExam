@@ -45,10 +45,14 @@
 </table>
 
 <p align="center">
-<input type="submit" value="Calculate your order"
-    name="btnSubmit" onClick="calcTotal()">
-<input type="reset" value="Clear" name="btnClear">
+<input type="submit" value="Calculate Total"
+    name="btnTotal" onClick="calcTotal()">
+<input type="submit" value="Calculate Change"
+    name="btnChange" onClick="calcChange()">
+<input type="reset" value="Reset" name="btnClear">
 <p align="center">Your total is: <align="center"><input type="text" name="txtTotal" size="10" value="0.00"></p>
+<p align="center">Tender: <align="center"><input type="text" name="txtTender" size="10" value="0.00"></p>
+<p align="center">Change: <align="center"><input type="text" name="txtChange" size="10" value="0.00"></p>
 </form>
 
 <script language="javascript">
@@ -66,6 +70,21 @@ function calcTotal(){
   strTaga=parseInt(strTaga)* prTaga;
   strTotal=(strRod + strBox + strTaga);
   document.form.txtTotal.value=strTotal;
+}
+</script>
+
+<script language="javascript">
+function calcChange(){
+  var strTotal, strTender, strChange, intTotal, intTender, intChange;
+  strTotal=document.form.txtTotal.value;
+  strTender=document.form.txtTender.value;
+
+  intTotal = parseInt(strTotal);
+  intTender = parseInt(strTender);
+  
+  strChange=(intTender - intTotal);
+  
+  document.form.txtChange.value=strChange;
 }
 </script>
 </body>

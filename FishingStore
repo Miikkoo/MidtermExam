@@ -55,6 +55,23 @@
 <p align="center">Change: <align="center"><input type="text" name="txtChange" size="10" value="0.00"></p>
 </form>
 
+<h2 align="center"><b>Click Button to change Color Background!</b></h2>
+<form name = "frmColor" action = "javascript:void(0);">
+<input type = "submit" value = "White" name ="bW"
+  onClick = "selectColor('White')">
+<input type = "submit" value = "Yellow" name ="bY"
+  onClick = "selectColor('Yellow')">
+<input type = "submit" value = "Fuchsia" name ="bF"
+  onClick = "selectColor('Fuchsia')">
+<input type = "submit" value = "Green" name ="bG"
+  onClick = "selectColor('Green')">
+<input type = "submit" value = "Purple" name ="bP"
+  onClick = "selectColor('Purple')">
+<input type = "submit" value = "Silver" name ="bS"
+  onClick = "selectColor('Silver')">
+<input type = "submit" value = "Red" name ="bR"
+  onClick = "selectColor('Red')">
+
 <script language="javascript">
 function calcTotal(){
   var strRod, strBox, strTaga, prRod, prBox, prTaga, strTotal;
@@ -87,5 +104,13 @@ function calcChange(){
   document.form.txtChange.value=strChange;
 }
 </script>
+
+<script language = "javascript">
+function selectColor(selectColor){
+  document.bgColor=selectColor;
+}
+</script>
+
+
 </body>
 </html>
